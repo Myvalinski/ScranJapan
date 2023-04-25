@@ -19,7 +19,7 @@ function subscribeToNewsletter() {
   };
 
   emailjs
-    .send("service_mpp3rjc", "template_h4jbfu8", params)
+    .send("service_mpp3rjc", "template_rir8bpk", params)
     .then(function (response) {
     // Display success message to user
     alert("Thank you for subscribing to our newsletter!");
