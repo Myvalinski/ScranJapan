@@ -19,15 +19,22 @@ function subscribeToNewsletter() {
   };
 
   emailjs
-    .send("YOUR_SERVICE_ID", "YOUR_NEWSLETTER_TEMPLATE_ID", params)
+    .send("service_mpp3rjc", "template_h4jbfu8", params)
     .then(function (response) {
-      
-      alert("Thank you for subscribing to our newsletter!");
-      document.getElementById("email").value = "";
+    // Display success message to user
+    alert("Thank you for subscribing to our newsletter!");
+
+    // Clear form fields
+    document.getElementById("email").value = "";
     })
 
     .catch(function (error) {
-      alert("An error occurred while subscribing to the newsletter. Please try again later.");
+    // Handle error
+    if (error.status >= 400) {
+    alert("An error occurred. Please try again later.");
+    } else {
+        alert("An unexpected error occurred. Please try again later.");
+    }
     });
 }
 
